@@ -1,10 +1,13 @@
 import Link from "next/link"
+// import { type PageProps } from "next"
 
-interface SuccessPageProps {
+// interface SuccessPageProps extends PageProps {
+//   searchParams: { session_id?: string }
+// }
+
+export default function Success({ searchParams }: {
   searchParams: { session_id?: string }
-}
-
-export default function Success({ searchParams }: SuccessPageProps) {
+}) {
   const sessionId = searchParams.session_id
 
   return (
