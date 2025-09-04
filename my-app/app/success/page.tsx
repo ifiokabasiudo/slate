@@ -5,9 +5,7 @@ import Link from "next/link"
 //   searchParams: { session_id?: string }
 // }
 
-export default function Success({ searchParams }: {
-  searchParams: { session_id?: string }
-}) {
+export default function Success({ searchParams }: any) {
   const sessionId = searchParams.session_id
 
   return (
