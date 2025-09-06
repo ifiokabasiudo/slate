@@ -20,7 +20,11 @@ export const fetchSectionUrl = async (
     });
 
   if (data && data.length > 0) {
-    const fileName = data[1].name;
+    let fileName = data[0].name;
+
+    if(storageName === "videography") {
+      fileName = data[1].name;
+    } 
     const { data: urlData } = await supabase.storage
       .from(storageName)
       .getPublicUrl(`${section}/${fileName}`);
