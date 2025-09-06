@@ -7,6 +7,8 @@ export const fetchSectionUrl = async (
   setFinished: (val: boolean) => void,
   storageName: string
 ) => {
+  console.log("Fetching URL for section:", section);
+
   const supabase = await createClient();
 
   const { data, error } = await supabase.storage
@@ -18,12 +20,13 @@ export const fetchSectionUrl = async (
     });
 
   if (data && data.length > 0) {
-    const fileName = data[0].name;
+    const fileName = data[1].name;
     const { data: urlData } = await supabase.storage
       .from(storageName)
       .getPublicUrl(`${section}/${fileName}`);
 
     if (urlData?.publicUrl) {
+      console.log("Fetched URL:", urlData.publicUrl);
       setUrlFn(urlData.publicUrl);
       setFinished(false);
     }
