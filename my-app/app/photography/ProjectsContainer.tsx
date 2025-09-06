@@ -8,6 +8,7 @@ export default async function EpisodesContainer() {
 
   const data = await retrieveProjectsData();
   const projects = data?.projects ?? [];
+  console.log("projects", projects);
 
   return <Projects projectsData={projects}  userData={user_page.user} />;
 }

@@ -9,7 +9,8 @@ type Props = {
   user: any;
 };
 
-const UploadImageBlock = ({ id, url, finished, onUpload, user }: Props) => (
+const UploadImageBlock = ({ id, url, finished, onUpload, user }: Props) => {
+  return (
   <div className={`relative w-full h-full rounded-md ${user && "group"}`}>
     <div className="absolute top-0 left-0 w-full h-full transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-50 flex flex-row justify-center items-center" />
     {user && (
@@ -48,6 +49,7 @@ const UploadImageBlock = ({ id, url, finished, onUpload, user }: Props) => (
       />
     )}
   </div>
-);
+)
+};
 
 export default UploadImageBlock;

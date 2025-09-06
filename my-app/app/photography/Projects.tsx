@@ -135,6 +135,8 @@ export default function Projects({
     setOpen(false);
   };
 
+  console.log("projects render", projects);
+
   return (
     <>
       <div className="bg-white w-full" id="Projects">
@@ -146,7 +148,7 @@ export default function Projects({
             </h3>
           </div>
           <div className="w-full flex flex-row flex-wrap h-fit relative mb-5">
-            {projects?.map((project, index) => (
+            {projects && projects[0].id ? projects.map((project, index) => (
               <div className="relative w-full sm:w-1/2 lg:w-1/4 group" key={index}>
                 <button
                   className="w-full h-full hover:cursor-pointer relative"
@@ -205,7 +207,9 @@ export default function Projects({
                   </div>
                 )}
               </div>
-            ))}
+            )) : (
+              <div>No projects available.</div>
+            )}
           </div>
           <a href="https://fjfilmsstudio.passgallery.com/client" className="underline underline-offset-2 text-lg py-5">
             View More
