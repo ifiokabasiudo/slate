@@ -71,10 +71,11 @@ This project started while building a client website. Instead of a static site, 
 
 ```bash
 # Clone the repository
-git clone https://github.com/thesimpleprogramme/slate-cms.git
+git clone https://github.com/thesimpleprogrammer/slate.git
 cd slate-cms
 
-# Install dependencies
+# Install dependencies for Frontend
+cd 
 npm install
 
 # Set up environment variables for Supabase and backend services
