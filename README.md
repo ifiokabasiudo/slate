@@ -103,8 +103,9 @@ nodemon server.js
 # Set up environment variables for Supabase and backend services in myapp/
 touch .env.local
 ```
-```
+
 fill this in the .env.local
+```
 NEXT_PUBLIC_SUPABASE_URL=your-subabase-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 STRIPE_SECRET_KEY=your-stripe-secret-key
