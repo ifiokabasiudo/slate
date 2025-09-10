@@ -3,6 +3,17 @@
 A lightweight, customizable **Content Management System** built with **Next.js, Supabase, and Docker**, designed to give non-technical users control over their websites. With **authentication, media management, and real-time content updates**, Slate CMS makes it simple for admins to manage content while keeping the app scalable and secure.  
 
 ---
+## Using the Live App
+* Click on the link below
+* Scroll to the bottom of the home page
+* Click on the small FJ inside the box (That's the login button)
+* Enter the following to login as admin
+```
+Email: ifiokabasiudoe@gmail.com
+Password: 1234567890
+
+``` 
+### Live app at [slate-app](https://slate-sage.vercel.app/)  
 
 ## ✨ Features
 - 🔐 **Authentication & Authorization**  
@@ -75,11 +86,28 @@ git clone https://github.com/thesimpleprogrammer/slate.git
 cd slate-cms
 
 # Install dependencies for Frontend
-cd 
+cd my-app
 npm install
 
-# Set up environment variables for Supabase and backend services
-cp .env.example .env.local
-
-# Run the app
+# Run Frontend
 npm run dev
+
+# Install dependencies for Backend
+cd backend
+npm install
+npm install -g nodemon
+
+# Run backend
+nodemon server.js
+
+# Set up environment variables for Supabase and backend services in myapp/
+touch .env.local
+```
+```
+fill this in the .env.local
+NEXT_PUBLIC_SUPABASE_URL=your-subabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+STRIPE_SECRET_KEY=your-stripe-secret-key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
+```
+
